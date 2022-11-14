@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="app-index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous" defer></script>
+
+    <title>Ma Météo</title>
+</head>
+<body>
+    <div class="calqueTransition is-active"></div>
+    <div class="mainConteneur">
+        <div class="containerPrincipal">
+            <header class="blocHeader">
+                <button type="button" data-bs-toggle="offcanvas" data-bs-target ="#userTools" class="boutonMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="divVilleEtIconeFavoris">
+                    <div class="ville"></div>
+                    <button class="boutonFavoris">
+                        <i class="fa-solid fa-heart"></i> 
+                    </button>
+                </div>
+                <div class="date"></div>
+            </header>
+    
+            <section class="offcanvas offcanvas-start" id="userTools">
+    
+                <div class="sectionMenu">
+                    <div class="offcanvas-header">
+                            <h2 class="offcanvas-title">Ma météo</h2>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="menuRechercher">
+                        <a href="./emplacement.html">Mes emplacements</a>
+                    </div>
+                    
+    
+                </div>
+            </section>   
+    
+            <div class="aujourdhui">
+    
+                <div class="blocHautAujourdhui">
+                    <div class="blocIcone">
+                    </div>
+                    <div class="temperature"></div>
+                    <div class="descriptionIcone"></div>
+    
+                    <div class="blocInfoSup">
+                        <div class="blocHaut">
+                            <div class="blocVent">
+                                <div class="vent"></div>
+                                <div class="rafale"></div>
+                            </div>
+                            <div class="blocHumidite">
+                                <div class="humidite"></div>
+                            </div>
+                        </div>
+                        <div class="blocBas">
+                            <div class="blocLeverCoucher">
+                                <div class="lever"></div>
+                                <div class="coucher"></div>
+                            </div>
+                            <div class="blocPression">
+                                <div class="pression"></div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+    
+                    
+                </div>
+            </div>    
+                <div class="blocVignetteAujourdhui">
+                    <div class="vignettesHautAujourdhui">
+                        
+                    </div>
+                    
+                    <div class="vignetteAujourdhuiFooter">
+                        <span>Plus de détails</span> &rarr;
+                    </div>
+    
+                </div>
+    
+                <div class="blocVignetteJoursSuivants">
+                    <div class="JoursSuivantsHeader">
+                        Prévision des jours suivants
+                    </div>
+                    <div class="vignettesBasJoursSuivants">
+    
+                    </div>
+                    <div class="vignetteJoursSuivantFooter">
+                        <span>Plus de détails</span> &rarr;
+                    </div>
+    
+                </div>
+                
+                
+            
+                
+    
+         
+    
+        </div>
+    </div>
+    
+    
+    
+    
+    
+</body>
+</html>

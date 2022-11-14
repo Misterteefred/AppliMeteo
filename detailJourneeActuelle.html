@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-journee-actuelle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./chartist/chartist.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.js" defer></script>
+    <script src="./app-journee-actuelle.js" defer></script>
+      
+    <title>Détail d'aujourd'hui</title>
+</head>
+<body>
+    <div class="calqueTransition is-active"></div>
+    <div class="containerPrincipal">
+        <div class="headerTop">
+            <div class="retour">
+                <a href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <div class="title">
+                <h4 class="ville"></h4>
+                <p class="date"></p>
+            </div>
+        </div>
+       
+        <div class="containerListe">            
+            
+        </div>
+        <div class="containerGraphique">
+            <div class="titreGraphique">Graphique des températures</div> 
+            <div class="graphique">
+                <div class="ct-chart ct-perfect-fourth graphTemp"></div>
+                
+            </div>
+        </div>
+        <div class="containerGraphique">
+            <div class="titreGraphique">Graphique des vents</div>
+            <div class="graphique">
+                <div class="ct-chart ct-perfect-fourth graphVent"></div> 
+                
+            </div>
+        </div>
+        <div class="containerGraphique">
+            <div class="titreGraphique">Graphique des rafales de vents</div>
+            <div class="graphique">
+                <div class="ct-chart ct-perfect-fourth graphRafales"></div>
+                
+            </div>
+        </div>
+        <div class="containerGraphique">
+            <div class="titreGraphique">Graphique de la couverture nuageuse</div>
+            <div class="graphique">
+                <div class="ct-chart ct-perfect-fourth graphCloudsCover"></div>
+                
+            </div>
+        </div>
+        <div class="containerGraphique">
+            <div class="titreGraphique">Graphique du taux d'humidité</div>
+            <div class="graphique">
+                <div class="ct-chart ct-perfect-fourth graphHumidite"></div>
+                
+            </div>
+        </div>
+
+        <!-- <div class="graphTemperature">
+            <div class="ct-chart ct-perfect-fourth graphTemp"></div>
+        </div>
+        <div class="ct-chart ct-perfect-fourth graphVent"></div> -->
+        
+        
+        <footer>
+            <div class="retourFooter">
+                <a href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+        </footer>   
+    </div>
+
+   
+</body>
+</html>

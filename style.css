@@ -1,0 +1,455 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: 'Roboto', sans-serif;   
+    margin: 0;
+    background-color: black;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center; 
+    
+}
+
+.calqueTransition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10001;
+    background-color: #202633;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s ease-out;  
+}
+
+.calqueTransition.is-active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+
+
+.containerPrincipal{
+    color: rgb(255, 255, 255);   
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 35px;
+
+}
+.sectionMenu{
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(64, 64, 64, 0.5),rgba(121, 121, 121, 0.5)), url("./ressources/iconesMeteo/fond/0.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/*---header----*/
+.blocHeader{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.divVilleEtIconeFavoris{
+    display: flex;
+    position: relative;
+}
+.boutonMenu{
+    position: absolute;
+    top: 0px;
+    left: -3px;
+    background-color: transparent;
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    transition : 0.2s;
+    border-radius: 0 5px 5px 0;
+}
+
+.fa-solid, .fa-regular{
+    pointer-events: none;
+    
+}
+
+.boutonMenu{
+    color : rgb(209, 209, 209);
+}
+.boutonMenu:hover{
+    color : rgb(255, 255, 255);
+}
+
+.btn{
+    color: white;
+}
+
+.boutonFavoris{
+    font-size: 25px;
+    background-color: transparent;
+    position: absolute;
+    top: 0px;
+    right: -43px;
+    border: none;
+    transition : 0.2s;
+    color : grey
+}
+
+.ville{
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.date{
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+/*----section MENU ----*/
+.boutonFermer{
+    color: white;
+}
+
+.offcanvas-header{
+    border-bottom: solid 1px;
+}
+
+.offcanvas-header h2{
+    font-weight: bold;
+}
+.menuRechercher{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: 0.2s;
+    
+}
+.menuRechercher:hover{
+    background-color: rgb(0, 0, 0);
+}
+.menuRechercher a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
+}
+.menuRechercher a:hover{
+    color: white;
+    
+}
+
+.menuRechercher a::before{
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;    
+    background: url(./ressources/autre/loupe.svg) center center / contain no-repeat;
+    margin-left: 17px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    vertical-align: middle;
+}
+.titreradar{
+    margin-top: 25px;
+    padding-top: 10px;
+    text-align: center;
+    border-top: 1px solid;
+}
+
+
+.titreTheme{
+    font-size: 22px;
+    margin-top: 35px;
+    margin-left:17px;
+}
+
+
+
+/*-------------------AUJOURDHUI----------------------*/
+
+/*-------blocHautAujourdhui----*/
+
+.aujourdhui{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    
+
+}
+.blocHautAujourdhui{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.blocIcone{
+    height: 64px;
+}
+.blocIcone img{
+    width: 130px;
+    height: 130px;
+ 
+}
+.temperature{
+    font-size: 4rem;
+    height: 85px;
+    margin-top: 25px;
+}
+.descriptionIcone{
+    font-size: 18px;
+}
+/*----------bloc info Sup-----*/
+.blocInfoSup{
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.blocHaut{
+    display: flex;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.253);
+    
+}
+.blocVent{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    
+    
+}
+.blocHumidite{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: solid 1px rgba(255, 255, 255, 0.253);
+    padding: 5px;
+   
+}
+
+.blocBas{
+    display: flex;
+}
+.blocLeverCoucher{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    
+    
+}
+.lever::before{
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;    
+    background: url(./ressources/autre/Lever.svg) center center / contain no-repeat;
+    vertical-align: middle;
+    padding-right: 30px;
+    position: relative;
+    /* right: 3px; */
+    top : -3px;
+    /* margin-left: -7px; */
+   
+}
+.coucher::before{
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;  
+    background: url(./ressources/autre/Coucher.svg) center center / contain no-repeat;
+    vertical-align: middle;
+    padding-right: 30px;
+    position: relative;
+    top : -3px;
+    
+
+}
+.lever{
+    padding: 5px;
+}
+
+.blocPression{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: solid 1px rgba(255, 255, 255, 0.253);
+    padding: 5px;
+}
+
+
+/*-------blocVignetteAujourdhui----*/
+
+
+.blocVignetteAujourdhui{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+.vignettesHautAujourdhui{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 5px;
+  
+}
+.vignetteAujourdhui{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
+    width: 35px
+}
+.vignetteAujourdhui img{
+    width: 50px;
+    height: 50px;
+}
+.vignetteAujourdhuiFooter{
+    width: 100%;
+    border-top: solid 1px rgba(255, 255, 255, 0.253);
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    
+    cursor: pointer;
+    border-radius: 0 0 10px 10px;
+    transition: 0.2s;
+    color: rgba(255, 255, 255, 0.5);
+}
+.vignetteAujourdhuiFooter:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: solid 1px (0, 0, 0, 0.51);
+    
+}
+
+/*---------------blocVignetteJoursSuivants-------------*/
+
+.blocVignetteJoursSuivants{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+
+.JoursSuivantsHeader{
+    font-size: 12px;
+    /* text-decoration: underline;
+    padding: 10px; */
+}
+.vignettesBasJoursSuivants{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.vignetteJourSuivant{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+
+}
+.titleJours{
+    border: solid 1px rgba(255, 255, 255, 0.525);
+    border-radius: 5px;
+    padding: 2px;
+    
+}
+
+
+.vignetteJourSuivant img{
+    width: 50px;
+    height: 50px;
+}
+.tempMax{
+    font-weight: bold;
+    color: rgb(255, 200, 0);
+}
+.vignetteJoursSuivantFooter{
+    color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    border-top: solid 1px rgba(255, 255, 255, 0.253);
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    
+    cursor: pointer;
+    border-radius: 0 0 10px 10px;
+    transition: 0.2s;
+}
+.vignetteJoursSuivantFooter span, .vignetteAujourdhuiFooter span{
+    text-decoration: underline;
+}
+.vignetteJoursSuivantFooter:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: solid 1px (0, 0, 0, 0.51);
+    color: rgb(255, 255, 255);
+}
+
+
+
+@media screen and (min-width: 600px){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-image: linear-gradient(120deg,#151b34, #010423); */
+        width: 100%;
+    }
+    .containerPrincipal{
+        width: 650px;
+        
+
+    }
+    
+}

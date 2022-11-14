@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style-emplacement.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./app-emplacement.js" defer></script>
+    <title>Lieux</title>
+</head>
+<body>
+    <div class="calqueTransition is-active"></div>
+    <div class="containerPrincipal">
+        <div class="retour">
+            <a href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+        <div class="blocInfo animate__animated">
+            <div class="elementBlocInfo">
+                <p>Pour un meilleur résultat, vous pouvez aussi indiquer le nom du pays.</p>
+                <div class="divCroix">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                
+            </div>
+            
+        </div>
+        <h2 class="titreLieux">Mes emplacements</h2>
+        <div class="divIconeInfo"><i class="fa-solid fa-circle-info"></i></div>
+        <div class="containerRechercheLieux">
+
+            <div class="blocChargement">
+                <img src="./ressources/autre/chargement.svg" alt="Chargement">
+            </div>
+            
+            <form class="inputForm">
+                <div class="divIconeRecherche">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <input type="text" class="input" placeholder="Rechercher un emplacement">                
+                <button class="boutonCroix" type="submit">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+
+                
+            </form>
+            
+            <div class="listeRecherche animate__animated">
+                <ul class="ullisteRecherche">                    
+                    <!-- <li class="liRecherche">Ostricourt</li> -->                    
+                </ul>
+            </div>
+                       
+        </div>
+        <div class="containerLocalisation">
+            <form class="geoloc">
+                <button class="buttonLocalisation" type="submit">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    <span>Me localiser</span>
+                </button> 
+            </form> 
+        </div>
+        
+        <div class="containerFavoris">
+            <h2 class="titreFavoris">Favoris</h2>
+            <ul class="listeFavoris">
+                
+                
+            </ul>
+        </div>
+        
+       
+    </div>
+</body>
+</html>

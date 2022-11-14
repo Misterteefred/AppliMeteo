@@ -1,0 +1,383 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+body{
+    margin: 0;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(rgba(25, 28, 44, 0.5),rgba(19, 13, 46, 0.5)), url('./ressources/iconesMeteo/fond/0.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    
+}
+.calqueTransition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10001;
+    background-color: #202633;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s ease-out;  
+}
+
+.calqueTransition.is-active {
+    pointer-events: all;
+    opacity: 1;
+}
+.containerPrincipal{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    /* background-color: rgb(25, 25, 91); */
+}
+.fa-solid{
+    pointer-events: none;
+    
+}
+.retour{
+    position: absolute;
+    top: 5px;
+    left: 13px
+}
+.retour a{
+    text-decoration: none;
+    color: rgb(209, 209, 209);
+    transition: 0.2s;   
+}
+.retour a:hover{
+    color: rgb(255, 255, 255);  
+    
+}
+
+.divIconeInfo{
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    color: rgba(255, 255, 255, 0.471);
+    transition: 0.2s;
+    cursor: pointer;
+    
+}
+.divIconeInfo:hover{
+    color: rgb(255, 255, 255);
+    
+}
+
+.blocInfo{
+    width: 250px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    /* right: 23px; */
+    z-index: 1;
+    font-size: 14px;
+    display: none;
+    
+}
+.blocInfo p {
+    margin: 0;
+}
+.elementBlocInfo{
+    position: relative;
+}
+.divCroix{
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    color: #ffffff7b;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.divCroix:hover{
+    color: #FFFFFF;
+}
+.blocInfoVisible{
+    display: block;
+}
+.animate__animated.animate__fadeIn {
+    --animate-duration: 0.3s;
+  }
+
+.containerRechercheLieux{
+    
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.blocChargement{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;     
+    justify-content: center;
+    text-align: center;
+    z-index: 9999;  
+   
+}
+.blocChargement img{
+    width: 150px;
+    height: 150px;
+}
+.chargementVisible{
+    display: flex; 
+    
+}
+.inputForm{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    
+}
+.input{
+    padding-left: 25px;
+    padding-right: 10px;
+    width: 100%;
+    color:#FFFFFF;
+    background-color: rgba(0, 0, 0, 0.8);
+    
+    
+}
+.input:focus{
+    color:#FFFFFF;
+    outline: none;
+}
+.inputForm input, .divIconeRecherche, .boutonCroix{
+    padding: 5px;
+    font-size: 15px;
+    border: none;    
+    height: 40px;
+    padding-right: 10px
+}
+.divIconeRecherche{
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px 0 0 10px ;
+    color: rgb(209, 209, 209);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.boutonCroix{
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0 10px 10px 0 ;
+    color: rgb(209, 209, 209);
+    transition: 0.2s;
+    cursor: pointer;
+} 
+.boutonCroix:hover{
+    color: rgb(255, 255, 255);      
+}
+.inputForm input::placeholder {
+    color: rgba(255, 255, 255, 0.596);
+ }
+
+
+
+
+.listeRecherche{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top : 48px;
+    width: 100%;
+    overflow: hidden;
+    overflow: scroll;
+    display: none;
+    height: 290px;
+    overflow-x: hidden;
+    border-radius: 5px;
+    
+    z-index : 1;
+}
+.ullisteRecherche{
+    padding-left: 5px;
+}
+
+.ullisteRecherche a:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.liRecherche{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;   
+}
+
+.spanRegionPays{
+    color: #ffffffa9;
+    font-size: 12px;
+    margin-left: 23px;
+    pointer-events: none;
+}
+.spanVille{
+    width: 100%;
+    pointer-events: none;
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+.spanVille::before{
+  
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;    
+    background: url(./ressources/autre/location.svg) center center / contain no-repeat;
+    vertical-align: middle;
+    margin-right: 5px;
+    position: relative;
+    top : 6px;
+    pointer-events: none;
+}
+.spanlocationId{
+    display: none;
+}
+
+.listeVisible{
+    display: block;
+}
+
+
+
+
+.buttonLocalisation{
+    margin-top: 20px;
+    margin-bottom: 10px;    
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFFFFF;
+    padding: 10px;
+    transition: 0.3s;
+}
+.buttonLocalisation:hover{
+    background-color: rgb(0, 0, 0);
+
+}
+
+.containerFavoris{
+    width: 100%;
+}
+.titreFavoris{
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center;
+    border-top: solid 1px rgba(255, 255, 255, 0.253);
+
+}
+.listeFavoris {
+    max-width: 90%;
+    list-style: none;
+    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+
+.VilleFavoris:hover{
+    background-color: rgb(0, 0, 0);
+}
+
+.VilleFavoris li {
+    flex: 1;
+    padding-left: 5px;
+}
+.boutonPoubelle{
+    height: 40px;
+    width: 40px;
+    color: #FFFFFF;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition : 0.2s;
+    border-radius: 20px;
+}
+.boutonPoubelle:hover{
+    background: red;
+}
+.VilleFavoris {
+    
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFFFFF;
+    padding-left: 5px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+    border-radius: 5px 20px 20px 5px;
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.blocVillefavoris{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    height: 40px;
+}
+
+.favorisLibele{
+    width: 150px;
+    margin-left: 5px;
+    margin-right: 10px;
+    white-space: nowrap;
+    /*... de ne pas dépasser de son conteneur...*/
+    overflow:hidden;
+    /*...et permet d'afficher '...' lorsque la chaine est trop longue*/
+    text-overflow: ellipsis;
+    pointer-events: none;
+}
+.villeFavorisTemp{
+    width: 10px;
+    margin-right: 20px;
+    pointer-events: none;
+}
+.villeFavorisIcone img{
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    
+}
+.villeFavorisIcone{
+    height: 40px;
+    pointer-events: none;
+}
