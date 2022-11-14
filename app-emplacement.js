@@ -123,7 +123,7 @@ function chargementPage(){
                     //div VilleFavoris
                     const divVilleFavoris = document.createElement('div')
                     divVilleFavoris.classList.add('VilleFavoris')
-                    divVilleFavoris.classList.add('animate__animated')
+                    
                     divVilleFavoris.append(divBlocVillefavoris,elBoutonPoubelle)
                     
                     //écriture du DOM
