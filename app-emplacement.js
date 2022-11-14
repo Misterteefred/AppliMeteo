@@ -288,7 +288,7 @@ function meLocaliser(e){
             updateLocalStorageEtRedirection(ObjetDonneesVille)
             });          
         }, () => {
-            alert(`Vous avez refusé la géolocalisation, l'application ne peur pas fonctionner, veuillez l'activer.!`)
+            alert(`Le navigateur n'est pas paramétré pour accepter la localisation.`)
         })
     }
 
