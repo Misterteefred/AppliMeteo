@@ -179,10 +179,14 @@ function selectionVilleFavorite(e){
         tableauVillesFavorites.splice(indexNomVille, 1)
         localStorage.removeItem('villeFavorites');
         localStorage.setItem("villeFavorites", JSON.stringify(tableauVillesFavorites))
-        e.target.parentNode.classList.add('animate__fadeOut');
-        window.setTimeout(function() {
-            e.target.parentNode.remove()
-        }, 400);
+        
+        e.target.parentNode.classList.add('suppression');
+        e.target.addEventListener('transitionend', function(e){
+            if (e.propertyName === 'height'){
+                e.target.parentNode.remove()
+            }
+            
+        })
         
     }
 }
