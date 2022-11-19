@@ -23,7 +23,7 @@ body{
     background-color: #202633;
     opacity: 0;
     pointer-events: none;
-    transition: 0.4s ease-out;  
+    transition: 0.6s ease-out;  
 }
 
 .calqueTransition.is-active {
@@ -40,7 +40,7 @@ body{
     color: rgb(255, 255, 255);
     /* background-color: rgb(25, 25, 91); */
 }
-.fa-solid{
+.boutonPoubelle i{
     pointer-events: none;
     
 }
@@ -52,7 +52,8 @@ body{
 .retour a{
     text-decoration: none;
     color: rgb(209, 209, 209);
-    transition: 0.2s;   
+    transition: 0.2s; 
+    font-size: 22px;  
 }
 .retour a:hover{
     color: rgb(255, 255, 255);  
@@ -66,6 +67,7 @@ body{
     color: rgba(255, 255, 255, 0.471);
     transition: 0.2s;
     cursor: pointer;
+    font-size: 22px;
     
 }
 .divIconeInfo:hover{
@@ -315,6 +317,27 @@ body{
     flex: 1;
     padding-left: 5px;
 }
+
+.poignee{
+    height: 40px;
+    color: #bab9b9;
+    background-color:#23232e;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    cursor: grab;
+    /* pointer-events: none; */
+    font-size: 25px; 
+}
+.poignee:active{
+    cursor: grabbing;
+}
+.poignee:hover{
+    color:#FFFFFF;
+}
+.poignee i{
+    pointer-events: none;
+}
+
 .boutonPoubelle{
     height: 40px;
     width: 40px;
@@ -325,37 +348,41 @@ body{
     cursor: pointer;
     font-size: 15px;
     transition : 0.2s;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 .boutonPoubelle:hover{
     background: red;
 }
-.VilleFavoris {
+.villeFavoris {
     
     background-color: rgba(0, 0, 0, 0.8);
-    color: #FFFFFF;
-    padding-left: 5px;
+    color: #c3c3c3;    
     font-size: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: 0.3s;
-    border-radius: 5px 20px 20px 5px;
+    border-radius: 5px 5px 5px 5px;
     width: 100%;
     max-width: 500px;
     height: 40px;
-    margin-bottom: 5px;
-    cursor: pointer;
+    margin-bottom: 10px;    
+    transition: bow-shadow, transform;
+    transition-duration: 0.3s;
+    
 }
 .blocVillefavoris{
     display: flex;
     justify-content: center;
     align-items: center;
-    pointer-events: none;
+    /* pointer-events: none; */
     height: 40px;
+    width: inherit;
 }
 
 .favorisLibele{
+    font-size: 16px;
+    cursor: pointer;
     width: 150px;
     margin-left: 5px;
     margin-right: 10px;
@@ -363,18 +390,21 @@ body{
     /*... de ne pas dépasser de son conteneur...*/
     overflow:hidden;
     /*...et permet d'afficher '...' lorsque la chaine est trop longue*/
-    text-overflow: ellipsis;
-    pointer-events: none;
+    text-overflow: ellipsis;    
+}
+.favorisLibele:hover{
+    color: #FFFFFF;
 }
 .villeFavorisTemp{
     width: 10px;
     margin-right: 20px;
-    pointer-events: none;
+    
 }
 .villeFavorisIcone img{
     width: 40px;
     height: 40px;
-    pointer-events: none;
+    
+    
     
 }
 .villeFavorisIcone{
@@ -395,3 +425,52 @@ body{
     height: 0;
     margin-top: 0;
 }
+
+.drag-start{
+    opacity: .5;
+}
+
+.indicateur {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 3px;
+    margin-bottom: 13px;
+    margin-top: 5px;
+    animation: apparition-indicateur 0.2s forwards;
+}
+  
+@keyframes apparition-indicateur {
+    from {
+        opacity: 0;
+        height: 0;
+    }
+    to {
+        opacity: 1;
+        height: 0.3rem;
+    }
+}
+
+ul.drag-en-cours div {
+    position: relative;
+}
+
+ul.drag-en-cours div::before,
+ul.drag-en-cours div::after {
+  content: '';
+  display: block;
+  width: 100%; 
+  height: 10px;
+  position: absolute;
+  
+}
+ul.drag-en-cours div::before {
+    top: calc(-1 * 10px);
+}
+  
+ul.drag-en-cours div::after {
+    bottom: calc(-1 * 10px);
+}
+
+
+
