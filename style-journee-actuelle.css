@@ -4,7 +4,6 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    /* min-height: 100vh; */
     margin: 0;
     color: rgb(0, 0, 0);
     background-image: linear-gradient(rgba(25, 28, 44, 0.5),rgba(19, 13, 46, 0.5)), url('./ressources/iconesMeteo/fond/0.jpg');
@@ -55,7 +54,8 @@ body{
 .retour a{
     text-decoration: none;
     color: rgb(209, 209, 209);
-    transition: 0.2s;   
+    transition: 0.2s;  
+    font-size: 22px; 
 }
 .retour a:hover{
     color: rgb(255, 255, 255);    
@@ -217,6 +217,7 @@ body{
     text-decoration: none;
     color: rgb(209, 209, 209);
     transition: 0.2s;
+    font-size: 22px;
 }
 .retourFooter a:hover{
     color: rgb(255, 255, 255);    
@@ -238,7 +239,6 @@ opacity: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        /* background-image: linear-gradient(120deg,#151b34, #010423); */
         width: 100%;
     }
     .containerPrincipal{
