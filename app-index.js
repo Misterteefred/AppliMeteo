@@ -24,7 +24,6 @@ const CLEAPI_IPGEOLOCALISATION = 'a4f657fbead34108a66b870b04fdc67f'
 let latitude
 let longitude
 let nomVille
-// let heureLocale
 const tableauJours = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 const tableauMois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 
@@ -58,10 +57,6 @@ function verficationDemarrage() {
         fetch(`https://api.ipgeolocation.io/timezone?apiKey=${CLEAPI_IPGEOLOCALISATION}&lat=${latitude}&long=${longitude}&lang=fr`)
         .then(response => response.json())
         .then(result => {
-
-
-            console.log ('INFO TIMEZONE')
-            console.log (result)
             const timezoneName = result.timezone
             const heureAPI = result.time_24
             const tabHeureAPI = heureAPI.split(':')
@@ -96,11 +91,9 @@ function verficationDemarrage() {
             donneesLocalStorage[0]['heureLocale'] = heureLocale;
             localStorage.setItem("donneesVille", JSON.stringify(donneesLocalStorage));
 
-                fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relativehumidity_2m,dewpoint_2m,apparent_temperature,precipitation,weathercode,surface_pressure,cloudcover,windspeed_10m,winddirection_10m,windgusts_10m,soil_temperature_0cm,soil_moisture_0_1cm&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,windspeed_10m_max,windgusts_10m_max,winddirection_10m_dominant,shortwave_radiation_sum&current_weather=true&timezone=${timezoneName}`) //&timeformat=unixtime
+                fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relativehumidity_2m,dewpoint_2m,apparent_temperature,precipitation,weathercode,surface_pressure,cloudcover,windspeed_10m,winddirection_10m,windgusts_10m,soil_temperature_0cm,soil_moisture_0_1cm&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,windspeed_10m_max,windgusts_10m_max,winddirection_10m_dominant,shortwave_radiation_sum&current_weather=true&timezone=${timezoneName}`) 
                 .then(response => response.json())    
                 .then(result => {
-                    console.log(result)
-
                     //météo actuelle
                     const ville = nomVille
                     const prefixHeureJournee = Number(tabHeureAPI[0])
@@ -123,7 +116,7 @@ function verficationDemarrage() {
                     const prefixeCoucherSoleil = coucherSoleil.slice(0, 2)
                     
                     
-                    const iconePrincipal = iconeMeteo(result.current_weather.weathercode,prefixHeureJournee,prefixeCoucherSoleil, prefixeLeverSoleil)
+                    let iconePrincipal = iconeMeteo(result.current_weather.weathercode,prefixHeureJournee,prefixeCoucherSoleil, prefixeLeverSoleil)
                     
                     
                     let description
@@ -164,6 +157,7 @@ function verficationDemarrage() {
                         case 48 :
                         description = 'Brouillard givré'
                         codeFondEcran = '3'
+                        
                         break
                         case 51 :
                         description = 'Bruine légère'
@@ -302,10 +296,7 @@ function verficationDemarrage() {
                     //bloc vent
                     elVent.textContent = 'Vent: ' + vent + 'km/h'
                     elRafale.textContent = 'Rafales Max: ' + rafalesVent + 'km/h'
-                    // //vu plus haut pour cette particularité des rafales max:
-                    // if (rafaleMax !== undefined){
-                    //     elRafale.textContent = `Rafales max: ${rafaleMax}km/h`
-                    // }                    
+                           
                     //humidité
                     elHumidite.textContent = 'Humidité: ' + humidite + '%'
 
@@ -492,7 +483,7 @@ elBoutonFavoris.addEventListener('click', function couleurBouton(){
     if (elBoutonFavoris.style.color === 'red'){
         elBoutonFavoris.style.color = 'grey'
         const indexNomVille = tableauVillesFavorites.findIndex( (element) => element.nomVille === nomVille);
-        // console.log(indexNomVille)
+       
         tableauVillesFavorites.splice(indexNomVille, 1)
         localStorage.removeItem('villeFavorites');
         localStorage.setItem("villeFavorites", JSON.stringify(tableauVillesFavorites))
