@@ -74,9 +74,9 @@ if (localStorage.getItem("villeFavorites") !== null) {
         .then(data => {
             
             const prefixeHeureJournee = data.time_24.slice(0,2)
-            // const prefixeHeureJournee = data.formatted.slice(11,13)            
+            const timezoneName = data.timezone            
 
-            fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&&current_weather=true&timezone=Europe%2FBerlin`)
+            fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&&current_weather=true&timezone=${timezoneName}`)
             .then(response => response.json())    
             .then(result => {
 
