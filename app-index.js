@@ -86,7 +86,7 @@ function verficationDemarrage() {
                 break
             }
             let numeroDuJour = result.date.slice(8)
-            numeroDuJour = (numeroDuJour< 10 ? '0' : '') + numeroDuJour
+            // numeroDuJour = (numeroDuJour< 10 ? '0' : '') + numeroDuJour
             let numeroDuMois = tableauMois[result.date.slice(5,7)-1]
             donneesLocalStorage[0]['heureLocale'] = heureLocale;
             localStorage.setItem("donneesVille", JSON.stringify(donneesLocalStorage));
